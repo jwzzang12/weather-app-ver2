@@ -16,7 +16,9 @@ function App() {
             <p>Clouds</p>
           </div>
         </div>
-        <div className="bottom"></div>
+        <div className="bottom">
+        <div className="feels"></div>
+        </div>
       </div>
     </div>
   );
