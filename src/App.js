@@ -1,9 +1,13 @@
 
+import "./App.css";
+import Location from "./components/Location";
+
 function App() {
   //const url ="https://api.openweathermap.org/data/2.5/weather?lat=32.76876910387183&lon=-97.06689230629766&appid=0f86c0f97f4a62686b4859344ba72ac1";
 
   return (
     <div className="App">
+<<<<<<< HEAD
       <div className="container">
         <div className="top">
           <div className="location">
@@ -20,6 +24,9 @@ function App() {
         <div className="feels"></div>
         </div>
       </div>
+=======
+      <Location />
+>>>>>>> 3f8f88d59bff6ff759b158e2e359e016a656b816
     </div>
   );
 }
