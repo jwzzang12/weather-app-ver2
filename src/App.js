@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Location from "./components/Location";
 
@@ -20,7 +19,7 @@ function App() {
           </div>
         </div>
         <div className="bottom">
-        <div className="feels"></div>
+          <div className="feels"></div>
         </div>
       </div>
       <Location />
