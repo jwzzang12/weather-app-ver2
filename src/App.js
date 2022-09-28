@@ -12,6 +12,8 @@ function App() {
       console.log(res.data);
     });
   });
+/* if lat && lon === city.list[4].value 
+Return city.list[1].value */
   return (
     <div className="App">
       <div className="container">
