@@ -9,17 +9,15 @@ function App() {
   const lon = JSON.stringify(location.coordinates.lon);
   const [name, setName] = useState([]);
   const [sky, setSky] = useState([]);
+  const [icon, setIcon] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&&appid=0f86c0f97f4a62686b4859344ba72ac1`
-      )
-      .then((res) => {
-        setName(res.data.name);
-        setSky(res.data.weather[0].main);
-        console.log(res.data);
-      });
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&&appid=0f86c0f97f4a62686b4859344ba72ac1`).then((res) => {
+      setName(res.data.name);
+      setSky(res.data.weather[0].main);
+      setIcon(res.data.weather[0].icon);
+      console.log(res.data);
+    });
   });
 
   return (
@@ -33,6 +31,7 @@ function App() {
             <h1>{sky}</h1>
           </div>
           <div className="description">
+            <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="" />
             <p>Clouds</p>
           </div>
         </div>
