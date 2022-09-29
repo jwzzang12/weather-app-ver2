@@ -7,22 +7,30 @@ function App() {
   const location = useGeoLocation();
   const lat = JSON.stringify(location.coordinates.lat);
   const lon = JSON.stringify(location.coordinates.lon);
+  const [name, setName] = useState([]);
+  const [sky, setSky] = useState([]);
+
   useEffect(() => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&&appid=0f86c0f97f4a62686b4859344ba72ac1`).then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&&appid=0f86c0f97f4a62686b4859344ba72ac1`
+      )
+      .then((res) => {
+        setName(res.data.name);
+        setSky(res.data.weather[0].main);
+        console.log(res.data);
+      });
   });
-/* if lat && lon === city.list[4].value 
-Return city.list[1].value */
+
   return (
     <div className="App">
       <div className="container">
         <div className="top">
           <div className="location">
-            <p>{}</p>
+            <p>{name}asd</p>
           </div>
           <div className="temp">
-            <h1>65 F</h1>
+            <h1>{sky}</h1>
           </div>
           <div className="description">
             <p>Clouds</p>
