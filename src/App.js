@@ -27,7 +27,7 @@ function App() {
       <div className="container">
         <div className="top">
           <div className="location">
-            <p>{name}asd</p>
+            <p>{name}</p>
           </div>
           <div className="temp">
             <h1>{sky}</h1>
