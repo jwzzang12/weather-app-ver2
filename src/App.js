@@ -1,6 +1,6 @@
 import "./App.css";
 import "./css/layout.css";
-import "../public/images"
+import "./public/images"
 import { useState, useEffect } from "react";
 import useGeoLocation from "./hooks/useGeolocation";
 import axios from "axios";
@@ -17,23 +17,23 @@ function App() {
   const [temp, setTemp] = useState([]);
   const today = new Date();
 
-  function backGroun (){
-    if (res.data.weather[0].id <232 ){
-      return  document.getElementById('1').style.backgroundImage="url(../../public/images/thunder.jpg)";
-    } else if (res.data.weather[0].id >232){
-      return  document.getElementById('1').style.backgroundImage="url(../../public/images/drizzle.jpg)";
-    } else if (res.data.weather[0].id >321){
-      return  document.getElementById('1').style.backgroundImage="url(../../public/images/rain.jpg)";
-    } else if (res.data.weather[0].id >531){
-      return  document.getElementById('1').style.backgroundImage="url(../../public/images/snow.jpg)";
-    }  else if (res.data.weather[0].id >622){
-      return  document.getElementById('1').style.backgroundImage="url(../../public/images/atmosphere.jpg)";
-    } else if (res.data.weather[0].id === 800){
-      return  document.getElementById('1').style.backgroundImage="url(../../public/images/clear.jpg)";
-    } else if(res.data.weather[0].id >800) {
-      return  document.getElementById('1').style.backgroundImage="url(../../public/images/clouds.jpg)";
-    }
-  };
+  // function backGroun (){
+  //   if (res.data.weather[0].id <232 ){
+  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/thunder.jpg)";
+  //   } else if (res.data.weather[0].id >232){
+  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/drizzle.jpg)";
+  //   } else if (res.data.weather[0].id >321){
+  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/rain.jpg)";
+  //   } else if (res.data.weather[0].id >531){
+  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/snow.jpg)";
+  //   }  else if (res.data.weather[0].id >622){
+  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/atmosphere.jpg)";
+  //   } else if (res.data.weather[0].id === 800){
+  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/clear.jpg)";
+  //   } else if(res.data.weather[0].id >800) {
+  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/clouds.jpg)";
+  //   }
+  // };
 
 
   useEffect(() => {
@@ -42,6 +42,24 @@ function App() {
       setSky(res.data.weather[0].main);
       setIcon(res.data.weather[0].icon);
       setTemp(res.data.main.temp);
+
+      if (res.data.weather[0].id <232 ){
+        return  document.getElementById('1').style.backgroundImage="require(../../public/images/thunder.jpg)";
+      } else if (res.data.weather[0].id >232){
+        return  document.getElementById('1').style.backgroundImage="url(../../public/images/drizzle.jpg)";
+      } else if (res.data.weather[0].id >321){
+        return  document.getElementById('1').style.backgroundImage="url(../../public/images/rain.jpg)";
+      } else if (res.data.weather[0].id >531){
+        return  document.getElementById('1').style.backgroundImage="url(../../public/images/snow.jpg)";
+      }  else if (res.data.weather[0].id >622){
+        return  document.getElementById('1').style.backgroundImage="url(../../public/images/atmosphere.jpg)";
+      } else if (res.data.weather[0].id === 800){
+        return  document.getElementById('1').style.backgroundImage="url(../../public/images/clear.jpg)";
+      } else if(res.data.weather[0].id >800) {
+        return  document.getElementById('1').style.backgroundImage="url(../../public/images/clouds.jpg)";
+      }
+
+
       console.log(res.data);
     });
   });
