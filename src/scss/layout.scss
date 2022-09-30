@@ -7,6 +7,7 @@
 body {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
+  color: #fff;
 }
 a {
   color: inherit;
@@ -22,4 +23,17 @@ input {
 button {
   border: none;
   background: none;
+}
+.App {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+.container {
+  width: 30vw;
+  height: calc(100vh - 100px);
+  max-width: 350px;
+  // background-color: #f00;
+  border-radius: 25px;
+  background: center / cover no-repeat url("../../public/images/main-bg.jpg");
 }
