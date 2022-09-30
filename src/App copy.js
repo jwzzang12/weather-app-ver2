@@ -21,31 +21,32 @@ function App() {
       setIcon(res.data.weather[0].icon);
       setTemp(res.data.main.temp);
       console.log(res.data);
-      let bg = "";
+      const bg = "";
       function backGround() {
         if (res.data.weather[0].id < 232) {
-          return (bg = "url('../images/thunder.jpg')");
+          return (bg = "url(../../public/images/thunder.jpg)");
         } else if (res.data.weather[0].id > 232) {
-          return (bg = "url('../images/drizzle.jpg')");
+          return (bg = "url(../../public/images/drizzle.jpg)");
         } else if (res.data.weather[0].id > 321) {
-          return (bg = "url('../images/rain.jpg')");
+          return (bg = "url(../../public/images/rain.jpg)");
         } else if (res.data.weather[0].id > 531) {
-          return (bg = "url('../images/snow.jpg')");
+          return (bg = "url(../../public/images/snow.jpg)");
         } else if (res.data.weather[0].id > 622) {
-          return (bg = "url('../images/atmosphere.jpg')");
+          return (bg = "url(../../public/images/atmosphere.jpg)");
         } else if (res.data.weather[0].id === 800) {
-          return (bg = "url('../images/clear.jpg')");
+          return (bg = "url(../../public/images/clear.jpg)");
         } else if (res.data.weather[0].id > 800) {
-          return (bg = "url('../images/clouds.jpg')");
+          return (bg = "url(../../public/images/clouds.jpg)");
         }
         document.getElementById("1").style.backgroundImage = bg;
+        console.log("AAA");
       }
     });
   });
 
   return (
     <div className="App">
-      <div className="container" id="1">
+      <div className="container" ref={bgRef} style={(bgRef.style = { box: color })}>
         <div className="top">
           <div className="location">
             <p>
