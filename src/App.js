@@ -14,6 +14,7 @@ function App() {
   const [icon, setIcon] = useState([]);
   const [temp, setTemp] = useState([]);
   const today = new Date();
+  let bg = "";
   useEffect(() => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&&appid=0f86c0f97f4a62686b4859344ba72ac1`).then((res) => {
       setName(res.data.name);
@@ -21,7 +22,7 @@ function App() {
       setIcon(res.data.weather[0].icon);
       setTemp(res.data.main.temp);
       console.log(res.data);
-      let bg = "";
+
       function backGround() {
         if (res.data.weather[0].id < 232) {
           return (bg = "url('../images/thunder.jpg')");
@@ -38,8 +39,9 @@ function App() {
         } else if (res.data.weather[0].id > 800) {
           return (bg = "url('../images/clouds.jpg')");
         }
-        document.getElementById("1").style.backgroundImage = bg;
       }
+      backGround();
+      document.getElementById("1").style.backgroundImage = bg;
     });
   });
 
@@ -49,7 +51,7 @@ function App() {
         <div className="top">
           <div className="location">
             <p>
-              <span class="material-icons">place</span>
+              <span className="material-icons">place</span>
               {name}
             </p>
           </div>
