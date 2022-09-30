@@ -1,4 +1,5 @@
 import "./App.css";
+import "./css/layout.css";
 import { useState, useEffect } from "react";
 import useGeoLocation from "./hooks/useGeolocation";
 import axios from "axios";
@@ -18,7 +19,7 @@ function App() {
       setName(res.data.name);
       setSky(res.data.weather[0].main);
       setIcon(res.data.weather[0].icon);
-      setTemp(res.data.main.temp)
+      setTemp(res.data.main.temp);
       console.log(res.data);
     });
   });
@@ -38,11 +39,10 @@ function App() {
             <h1>{sky}</h1>
           </div>
           <div className="temp">
-            <h1>{Math.round(1.8*(temp-273) + 32)}</h1>
+            <h1>{Math.round(1.8 * (temp - 273) + 32)}</h1>
           </div>
           <div className="description">
             <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="" />
-            <p>Clouds</p>
           </div>
         </div>
         <div className="bottom">
