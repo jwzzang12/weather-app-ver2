@@ -30,7 +30,7 @@ function App() {
       return  document.getElementById('1').style.backgroundImage="url(../../public/images/atmosphere.jpg)";
     } else if (res.data.weather[0].id === 800){
       return  document.getElementById('1').style.backgroundImage="url(../../public/images/clear.jpg)";
-    } else (res.data.weather[0].id >800) {
+    } else if(res.data.weather[0].id >800) {
       return  document.getElementById('1').style.backgroundImage="url(../../public/images/clouds.jpg)";
     }
   };
