@@ -24,19 +24,19 @@ function App() {
       console.log(res.data);
 
       function backGround() {
-        if (res.data.weather[0].id < 232) {
+        if (res.data.weather[0].id < 250) {
           return (bg = "url('../images/thunder.jpg')");
-        } else if (res.data.weather[0].id > 232) {
+        } else if (res.data.weather[0].id < 350) {
           return (bg = "url('../images/drizzle.jpg')");
-        } else if (res.data.weather[0].id > 321) {
+        } else if (res.data.weather[0].id < 550) {
           return (bg = "url('../images/rain.jpg')");
-        } else if (res.data.weather[0].id > 531) {
+        } else if (res.data.weather[0].id < 650) {
           return (bg = "url('../images/snow.jpg')");
-        } else if (res.data.weather[0].id > 622) {
+        } else if (res.data.weather[0].id < 790) {
           return (bg = "url('../images/atmosphere.jpg')");
         } else if (res.data.weather[0].id === 800) {
           return (bg = "url('../images/clear.jpg')");
-        } else if (res.data.weather[0].id > 800) {
+        } else {
           return (bg = "url('../images/clouds.jpg')");
         }
       }
