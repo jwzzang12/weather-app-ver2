@@ -1,6 +1,5 @@
 import "./App.css";
 import "./css/layout.css";
-import "./public/images"
 import { useState, useEffect } from "react";
 import useGeoLocation from "./hooks/useGeolocation";
 import axios from "axios";
@@ -16,52 +15,14 @@ function App() {
   const [icon, setIcon] = useState([]);
   const [temp, setTemp] = useState([]);
   const today = new Date();
-<<<<<<< HEAD
 
-  // function backGroun (){
-  //   if (res.data.weather[0].id <232 ){
-  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/thunder.jpg)";
-  //   } else if (res.data.weather[0].id >232){
-  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/drizzle.jpg)";
-  //   } else if (res.data.weather[0].id >321){
-  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/rain.jpg)";
-  //   } else if (res.data.weather[0].id >531){
-  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/snow.jpg)";
-  //   }  else if (res.data.weather[0].id >622){
-  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/atmosphere.jpg)";
-  //   } else if (res.data.weather[0].id === 800){
-  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/clear.jpg)";
-  //   } else if(res.data.weather[0].id >800) {
-  //     return  document.getElementById('1').style.backgroundImage="url(../../public/images/clouds.jpg)";
-  //   }
-  // };
-
-
-=======
   let bg = "";
->>>>>>> cab2e83963c12e321d8ead438917992bce3af05e
   useEffect(() => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&&appid=0f86c0f97f4a62686b4859344ba72ac1`).then((res) => {
       setName(res.data.name);
       setSky(res.data.weather[0].main);
       setIcon(res.data.weather[0].icon);
       setTemp(res.data.main.temp);
-
-      if (res.data.weather[0].id <232 ){
-        return  document.getElementById('1').style.backgroundImage="require(../../public/images/thunder.jpg)";
-      } else if (res.data.weather[0].id >232){
-        return  document.getElementById('1').style.backgroundImage="url(../../public/images/drizzle.jpg)";
-      } else if (res.data.weather[0].id >321){
-        return  document.getElementById('1').style.backgroundImage="url(../../public/images/rain.jpg)";
-      } else if (res.data.weather[0].id >531){
-        return  document.getElementById('1').style.backgroundImage="url(../../public/images/snow.jpg)";
-      }  else if (res.data.weather[0].id >622){
-        return  document.getElementById('1').style.backgroundImage="url(../../public/images/atmosphere.jpg)";
-      } else if (res.data.weather[0].id === 800){
-        return  document.getElementById('1').style.backgroundImage="url(../../public/images/clear.jpg)";
-      } else if(res.data.weather[0].id >800) {
-        return  document.getElementById('1').style.backgroundImage="url(../../public/images/clouds.jpg)";
-      }
 
 
       console.log(res.data);
@@ -89,13 +50,8 @@ function App() {
   });
 
   return (
-<<<<<<< HEAD
-    <div className="App" id="1">
-      <div className="container">
-=======
     <div className="App">
       <div className="container" id="1">
->>>>>>> cab2e83963c12e321d8ead438917992bce3af05e
         <div className="top">
           <div className="location">
             <p>
