@@ -33,7 +33,10 @@ function App() {
 
         function backGround() {
           if (res.data.weather[0].id < 250) {
-            return (bg = "url('../images/thunder.jpg')");
+            return (
+              bg = "url('../images/thunder.jpg')",
+              icon ="clear.jpg"
+              );
           } else if (res.data.weather[0].id < 350) {
             return (bg = "url('../images/drizzle.jpg')");
           } else if (res.data.weather[0].id < 550) {
@@ -65,16 +68,16 @@ function App() {
           </div>
           <div className="date">
             <Moment format="MMM DD, ddd">{today}</Moment>
-          </div>
-          <div className="icon">
-            <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="" />
+            <Showtime /> 
           </div>
           <div className="sky">
             <p>{sky}</p>
           </div>
           <div className="temp">
             <h1>{Math.round(1.8 * (temp - 273) + 32)}</h1>
-            <Showtime /> 
+          </div>
+          <div className="icon">
+            {/* <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="" /> */}
           </div>
         </div>
       </div>
