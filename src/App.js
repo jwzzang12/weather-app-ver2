@@ -29,14 +29,12 @@ function App() {
         setIcon(res.data.weather[0].icon);
         setTemp(res.data.main.temp);
 
+
         console.log(res.data);
 
         function backGround() {
           if (res.data.weather[0].id < 250) {
-            return (
-              bg = "url('../images/thunder.jpg')",
-              icon ="clear.jpg"
-              );
+            return (bg = "url('../images/thunder.jpg')");
           } else if (res.data.weather[0].id < 350) {
             return (bg = "url('../images/drizzle.jpg')");
           } else if (res.data.weather[0].id < 550) {
@@ -53,7 +51,27 @@ function App() {
         }
         backGround();
         document.getElementById("1").style.backgroundImage = bg;
+        
+        function iconChange() {
+          if (res.data.weather[0].id < 250) {
+            return (document.getElementById("2").img="url('../images/sun.png')");
+          } else if (res.data.weather[0].id < 350) {
+            return (document.getElementById("2").style.img="url('../images/drizzle.png')");
+          } else if (res.data.weather[0].id < 550) {
+            return (document.getElementById("2").style.img="url('../images/rain.png')");
+          } else if (res.data.weather[0].id < 650) {
+            return (document.getElementById("2").style.img="url('../images/snow.png')");
+          } else if (res.data.weather[0].id < 790) {
+            return (document.getElementById("2").style.img="url('../images/atmosphere.png')");
+          } else if (res.data.weather[0].id === 800) {
+            return (document.getElementById("2").style.img="url('../images/sun.png')");
+          } else {
+            return (document.getElementById("2").style.img="url('../images/clouds.png')");
+          }
+        }
+        iconChange();
       });
+
   });
 
   return (
@@ -68,7 +86,7 @@ function App() {
           </div>
           <div className="date">
             <Moment format="MMM DD, ddd">{today}</Moment>
-            <Showtime /> 
+            <Showtime />
           </div>
           <div className="sky">
             <p>{sky}</p>
@@ -76,8 +94,8 @@ function App() {
           <div className="temp">
             <h1>{Math.round(1.8 * (temp - 273) + 32)}</h1>
           </div>
-          <div className="icon">
-            {/* <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="" /> */}
+          <div className="icon" id="2">
+            {/* <img src="" alt="" /> */}
           </div>
         </div>
       </div>
