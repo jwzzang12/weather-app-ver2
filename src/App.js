@@ -16,6 +16,7 @@ function App() {
   const [icon, setIcon] = useState([]);
   const [temp, setTemp] = useState([]);
   const today = new Date();
+<<<<<<< HEAD
 
   // function backGroun (){
   //   if (res.data.weather[0].id <232 ){
@@ -36,6 +37,9 @@ function App() {
   // };
 
 
+=======
+  let bg = "";
+>>>>>>> cab2e83963c12e321d8ead438917992bce3af05e
   useEffect(() => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&&appid=0f86c0f97f4a62686b4859344ba72ac1`).then((res) => {
       setName(res.data.name);
@@ -61,28 +65,56 @@ function App() {
 
 
       console.log(res.data);
+
+      function backGround() {
+        if (res.data.weather[0].id < 232) {
+          return (bg = "url('../images/thunder.jpg')");
+        } else if (res.data.weather[0].id > 232) {
+          return (bg = "url('../images/drizzle.jpg')");
+        } else if (res.data.weather[0].id > 321) {
+          return (bg = "url('../images/rain.jpg')");
+        } else if (res.data.weather[0].id > 531) {
+          return (bg = "url('../images/snow.jpg')");
+        } else if (res.data.weather[0].id > 622) {
+          return (bg = "url('../images/atmosphere.jpg')");
+        } else if (res.data.weather[0].id === 800) {
+          return (bg = "url('../images/clear.jpg')");
+        } else if (res.data.weather[0].id > 800) {
+          return (bg = "url('../images/clouds.jpg')");
+        }
+      }
+      backGround();
+      document.getElementById("1").style.backgroundImage = bg;
     });
   });
 
   return (
+<<<<<<< HEAD
     <div className="App" id="1">
       <div className="container">
+=======
+    <div className="App">
+      <div className="container" id="1">
+>>>>>>> cab2e83963c12e321d8ead438917992bce3af05e
         <div className="top">
-          <div className="date">
-            <span>Today</span>
-            <Moment format="YYYY MMM DD">{today}</Moment>
-          </div>
           <div className="location">
-            <p>{name}</p>
+            <p>
+              <span className="material-icons">place</span>
+              {name}
+            </p>
+          </div>
+          <div className="date">
+            <Moment format="MMM DD, ddd">{today}</Moment>
+          </div>
+          <div className="icon">
+            <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="" />
           </div>
           <div className="sky">
-            <h1>{sky}</h1>
+            <p>{sky}</p>
           </div>
           <div className="temp">
             <h1>{Math.round(1.8 * (temp - 273) + 32)}</h1>
-          </div>
-          <div className="description">
-            <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="" />
+            <span></span>
           </div>
         </div>
         <div className="bottom">
