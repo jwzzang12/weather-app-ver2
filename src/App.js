@@ -70,11 +70,7 @@ function App() {
           </div>
           <div className="temp">
             <h1>{Math.round(1.8 * (temp - 273) + 32)}</h1>
-            <span></span>
           </div>
-        </div>
-        <div className="bottom">
-          <div className="feels"></div>
         </div>
       </div>
     </div>
