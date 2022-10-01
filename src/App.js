@@ -1,10 +1,11 @@
 import "./App.css";
 import "./css/layout.css";
 import { useState, useEffect } from "react";
+import React from "react";
+import Showtime from "../src/components/Showtime";
 import useGeoLocation from "./hooks/useGeolocation";
 import axios from "axios";
 import Moment from "react-moment";
-
 
 function App() {
   const location = useGeoLocation();
@@ -18,35 +19,38 @@ function App() {
 
   let bg = "";
   useEffect(() => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&&appid=0f86c0f97f4a62686b4859344ba72ac1`).then((res) => {
-      setName(res.data.name);
-      setSky(res.data.weather[0].main);
-      setIcon(res.data.weather[0].icon);
-      setTemp(res.data.main.temp);
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&&appid=0f86c0f97f4a62686b4859344ba72ac1`
+      )
+      .then((res) => {
+        setName(res.data.name);
+        setSky(res.data.weather[0].main);
+        setIcon(res.data.weather[0].icon);
+        setTemp(res.data.main.temp);
 
+        console.log(res.data);
 
-      console.log(res.data);
-
-      function backGround() {
-        if (res.data.weather[0].id < 250) {
-          return (bg = "url('../images/thunder.jpg')");
-        } else if (res.data.weather[0].id < 350) {
-          return (bg = "url('../images/drizzle.jpg')");
-        } else if (res.data.weather[0].id < 550) {
-          return (bg = "url('../images/rain.jpg')");
-        } else if (res.data.weather[0].id < 650) {
-          return (bg = "url('../images/snow.jpg')");
-        } else if (res.data.weather[0].id < 790) {
-          return (bg = "url('../images/atmosphere.jpg')");
-        } else if (res.data.weather[0].id === 800) {
-          return (bg = "url('../images/clear.jpg')");
-        } else {
-          return (bg = "url('../images/clouds.jpg')");
+        function backGround() {
+          if (res.data.weather[0].id < 250) {
+            return (bg = "url('../images/thunder.jpg')");
+          } else if (res.data.weather[0].id < 350) {
+            return (bg = "url('../images/drizzle.jpg')");
+          } else if (res.data.weather[0].id < 550) {
+            return (bg = "url('../images/rain.jpg')");
+          } else if (res.data.weather[0].id < 650) {
+            return (bg = "url('../images/snow.jpg')");
+          } else if (res.data.weather[0].id < 790) {
+            return (bg = "url('../images/atmosphere.jpg')");
+          } else if (res.data.weather[0].id === 800) {
+            return (bg = "url('../images/clear.jpg')");
+          } else {
+            return (bg = "url('../images/clouds.jpg')");
+          }
         }
-      }
-      backGround();
-      document.getElementById("1").style.backgroundImage = bg;
-    });
+        backGround();
+        document.getElementById("1").style.backgroundImage = bg;
+      });
   });
 
   return (
@@ -70,6 +74,7 @@ function App() {
           </div>
           <div className="temp">
             <h1>{Math.round(1.8 * (temp - 273) + 32)}</h1>
+            <Showtime /> 
           </div>
         </div>
       </div>
