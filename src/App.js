@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import useGeoLocation from "./hooks/useGeolocation";
 import axios from "axios";
 import Moment from "react-moment";
-import { clear } from "@testing-library/user-event/dist/clear";
+
 
 function App() {
   const location = useGeoLocation();
