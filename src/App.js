@@ -91,11 +91,11 @@ function App() {
           <div className="sky">
             <p>{sky}</p>
           </div>
-          <div className="temp">
-            <h1>{Math.round(1.8 * (temp - 273) + 32)}</h1>
-          </div>
           <div className="icon" id="2">
             {/* <img src="" alt="" /> */}
+          </div>
+          <div className="temp">
+            <h1>{Math.round(1.8 * (temp - 273) + 32)}</h1>
           </div>
         </div>
       </div>
