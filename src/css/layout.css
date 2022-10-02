@@ -41,6 +41,7 @@ button {
 .container {
   width: 30vw;
   height: calc(100vh - 100px);
+  max-height: 400px ;
   padding: 30px;
   background-image: url("../../public/images/main-bg.jpg");
   background-position: center;

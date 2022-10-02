@@ -13,7 +13,7 @@ function App() {
   const lon = JSON.stringify(location.coordinates.lon);
   const [name, setName] = useState([]);
   const [sky, setSky] = useState([]);
-  const [icon, setIcon] = useState([]);
+  // const [icon, setIcon] = useState([]);
   const [temp, setTemp] = useState([]);
   const today = new Date();
 
@@ -26,7 +26,7 @@ function App() {
       .then((res) => {
         setName(res.data.name);
         setSky(res.data.weather[0].main);
-        setIcon(res.data.weather[0].icon);
+        // setIcon(res.data.weather[0].icon);
         setTemp(res.data.main.temp);
 
 
