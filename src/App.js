@@ -52,24 +52,24 @@ function App() {
         backGround();
         document.getElementById("1").style.backgroundImage = bg;
         
-        function iconChange() {
-          if (res.data.weather[0].id < 250) {
-            return (document.getElementById("2").img="url('../images/sun.png')");
-          } else if (res.data.weather[0].id < 350) {
-            return (document.getElementById("2").style.img="url('../images/drizzle.png')");
-          } else if (res.data.weather[0].id < 550) {
-            return (document.getElementById("2").style.img="url('../images/rain.png')");
-          } else if (res.data.weather[0].id < 650) {
-            return (document.getElementById("2").style.img="url('../images/snow.png')");
-          } else if (res.data.weather[0].id < 790) {
-            return (document.getElementById("2").style.img="url('../images/atmosphere.png')");
-          } else if (res.data.weather[0].id === 800) {
-            return (document.getElementById("2").style.img="url('../images/sun.png')");
-          } else {
-            return (document.getElementById("2").style.img="url('../images/clouds.png')");
-          }
-        }
-        iconChange();
+        // function iconChange() {
+        //   if (res.data.weather[0].id < 250) {
+        //     return (document.getElementById("2").img="url('../images/sun.png')");
+        //   } else if (res.data.weather[0].id < 350) {
+        //     return (document.getElementById("2").style.img="url('../images/drizzle.png')");
+        //   } else if (res.data.weather[0].id < 550) {
+        //     return (document.getElementById("2").style.img="url('../images/rain.png')");
+        //   } else if (res.data.weather[0].id < 650) {
+        //     return (document.getElementById("2").style.img="url('../images/snow.png')");
+        //   } else if (res.data.weather[0].id < 790) {
+        //     return (document.getElementById("2").style.img="url('../images/atmosphere.png')");
+        //   } else if (res.data.weather[0].id === 800) {
+        //     return (document.getElementById("2").style.img="url('../images/sun.png')");
+        //   } else {
+        //     return (document.getElementById("2").style.img="url('../images/clouds.png')");
+        //   }
+        // }
+        // iconChange();
       });
 
   });
