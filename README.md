@@ -6,8 +6,9 @@ Welcome to the Weather App.
 Key Features:
     -It shows the location of the devices that use the app
     -Shows the temperature
+    -Dynamically changes background on weather condition
     -Shows date
-    -Shows time.
+    -Shows live time
 
 How to use it on the web:
     simply go this link https://weather-app-xxtarekxx.vercel.app/ 
