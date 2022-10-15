@@ -1,4 +1,5 @@
 ![image screenshot](https://ibb.co/mBGZnYz)
+
 Welcome to the Weather App. It shows the location of the devices that uses the app, shows the temperature, date and time.
 
 How to use it on the web:
