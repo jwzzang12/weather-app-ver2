@@ -1,4 +1,5 @@
-![image screenshot](https://ibb.co/mBGZnYz)
+![App screenshot](https://user-images.githubusercontent.com/52683281/195962709-7d702e2b-72ae-498c-9157-74d65a567745.jpg)
+
 
 Welcome to the Weather App. It shows the location of the devices that uses the app, shows the temperature, date and time.
 
