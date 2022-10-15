@@ -14,11 +14,9 @@ How to use it on the web:
     the app automatically will detect your location and will show the relevant information
 
 How to use locally on your device:
-    1- Using terminal type git clone https://github.com/jwzzang12/weather-app.git
-    2- using terminal type npm install(make sure you are in the weather-app folder)
-    3- using terminal type npm start
+    Using terminal type git clone https://github.com/jwzzang12/weather-app.git , then type npm install(make sure you are in the weather-app folder) , finally start the project by typing npm start
 
-Thank you for trying out app
+Thank you for trying our app
 
 
 Credits:
