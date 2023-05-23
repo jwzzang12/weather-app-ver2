@@ -60,7 +60,7 @@ function App() {
           <span className='material-symbols-outlined'>{icon}</span>
         </div>
         <div className='temp'>
-          <span>{Math.round(temp - 273.15)}</span>
+          <span>{Math.round(temp - 273.15)}°</span>
         </div>
         <div className='weather'>
           <span>{weather}</span>
